@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   value = 'World';
+
+  constructor()
+  {
+    if(this.value=='World')
+    {
+      console.log('hello');
+    }
+
+  }
 }
