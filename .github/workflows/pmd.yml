@@ -2,9 +2,14 @@
 name: PMD
   
 on:
-  pull_request:
+  push:
     branches:
       - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
 
 jobs:
   # This is the name of the job. You can give it whatever name you want
