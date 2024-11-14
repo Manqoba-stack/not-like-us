@@ -115,7 +115,7 @@
     <priority>3</priority>
       <properties>
       </properties>
-    <rule/>
+    </rule>
    <rule ref="category/apex/codestyle.xml/FormalParameterNamingConventions">
       <priority>3</priority>
       <properties>
