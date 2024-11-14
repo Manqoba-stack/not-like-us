@@ -111,6 +111,11 @@
       <properties>
       </properties>
    </rule>
+   <rule ref="category/ecmascript/performance.xml/AvoidConsoleStatements">
+    <priority>3</priority>
+      <properties>
+      </properties>
+    <rule/>
    <rule ref="category/apex/codestyle.xml/FormalParameterNamingConventions">
       <priority>3</priority>
       <properties>
