@@ -58,7 +58,7 @@ jobs:
             id: pmd
             with: 
                   sourcePath: 'force-app'
-                  rulesets: 'ruleset.xml'    
+                  rulesets: 'apex_ruleset.xml'    
                   analyzeModifiedFilesOnly: false
                   createGitHubAnnotations: true 
                   
