@@ -9,10 +9,7 @@ export class AppComponent {
 
   constructor()
   {
-    if(this.value=='World')
-    {
-      console.log('hello');
-    }
+   
 
   }
 }
