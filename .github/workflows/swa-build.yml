@@ -1,4 +1,4 @@
-name: Build SWA
+name: swa build 
 
 on:
     push:
