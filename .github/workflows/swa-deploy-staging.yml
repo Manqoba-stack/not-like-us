@@ -41,11 +41,12 @@ jobs:
       - name: Get run ID of "Test" workflow
         id: get-run-id
         run: |
-          OTHER_REPO="${{ github.repository }}"
+          OTHER_REPO="Manqoba-stack/not-like-us"
           WF_NAME="swa build"
-          RUN_ID=`gh run --repo ${OTHER_REPO} watch --workflow ${WF_NAME} --json databaseId --jq .[0].databaseId`
+          RUN_ID=$(gh run list --repo "$OTHER_REPO" --workflow "$WF_NAME" --json databaseId --jq '.[0].databaseId')
           echo "Detected latest run id of ${RUN_ID} for workflow ${WF_NAME}"
           echo "run-id=${RUN_ID}" >> "$GITHUB_OUTPUT"
+
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Download artifact from "swa build" workflow
