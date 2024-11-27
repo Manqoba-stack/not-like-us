@@ -50,7 +50,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Download artifact from "swa build" workflow
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: swa-build # Match name used in test.yml upload artifact step
           github-token: ${{ github.token }}
