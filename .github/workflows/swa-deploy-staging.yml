@@ -1,0 +1,22 @@
+name: Deploy to staging
+on: 
+    workflow_run:
+        workflows: ["Build SWA"]
+        types:
+            - completed
+jobs: 
+    deploy:
+        runs-on : ubuntu-latest
+        steps:
+            - name : Download artifact
+              uses : actions/download-artifact@v3
+              with : 
+                name: swa-build
+                path: dist/
+
+            - name : Deploy to azure storage (staging)
+              uses : azure-actions/deploy-azure-storage@v1
+              with :
+                azure_storage_account : ${{secrets.AZURE_STORAGE_ACCOUNT_STAGING}}
+                azure_storage_access_key : ${{secrets.AZURE_STORAGE_ACCESS_KEY_STAGING}}
+                container_name: ${{secrets.CONTAINER_NAME_STAGING}}
