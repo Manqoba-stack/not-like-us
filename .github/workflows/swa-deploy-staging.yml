@@ -51,7 +51,7 @@ jobs:
       - name: Download artifact from "swa build" workflow
         uses: actions/download-artifact@v3
         with:
-          name: build-output # Match name used in test.yml upload artifact step
+          name: swa-build # Match name used in test.yml upload artifact step
           github-token: ${{ github.token }}
           repository: ${{ github.repository }}
           run-id: ${{ steps.get-run-id.outputs.run-id }}
