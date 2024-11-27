@@ -12,7 +12,7 @@ jobs:
               uses : actions/download-artifact@v3
               with : 
                 name: swa-build
-                path: dist/
+                # path: dist/
 
             - name : Deploy to azure storage (staging)
               uses : Azure/static-web-apps-deploy@v1
