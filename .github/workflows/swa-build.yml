@@ -1,0 +1,25 @@
+name: Build swa
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name : Checkout code
+              uses : actions/checkout@v3
+
+            - name : Install dependencies
+              run  : npm install
+
+            - name : swa build
+              run  : npm run build
+              
+            - name : Upload artifact
+              uses : actions/upload-artifact@v3
+              with : 
+                name : swa-build
+                path : dist
